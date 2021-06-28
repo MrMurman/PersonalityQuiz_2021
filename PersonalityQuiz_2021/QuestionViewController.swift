@@ -12,20 +12,11 @@ class QuestionViewController: UIViewController {
     @IBOutlet var questionLabel: UILabel!
     
     @IBOutlet var singleStackView: UIStackView!
-    @IBOutlet var singleButton1: UIButton!
-    @IBOutlet var singleButton2: UIButton!
-    @IBOutlet var singleButton3: UIButton!
-    @IBOutlet var singleButton4: UIButton!
     @IBOutlet var singleButtonsArr: [UIButton]!
     
     
     @IBOutlet var multipleStackView: UIStackView!
-    @IBOutlet var multiLabel1: UILabel!
-    @IBOutlet var multiLabel2: UILabel!
-    @IBOutlet var multiLabel3: UILabel!
-    @IBOutlet var multiLabel4: UILabel!
     @IBOutlet var multiLabelArr: [UILabel]!
-    
     @IBOutlet var multiSwitchArr: [UISwitch]!
     
     
@@ -56,19 +47,9 @@ class QuestionViewController: UIViewController {
         
         let currentAnswers = questions[questionIndex].answers
         
-        switch sender {
-        case singleButtonsArr[0]:
-            answersChosen.append(currentAnswers[0])
-        case singleButtonsArr[1]:
-            answersChosen.append(currentAnswers[1])
-        case singleButtonsArr[2]:
-            answersChosen.append(currentAnswers[2])
-        case singleButtonsArr[3]:
-            answersChosen.append(currentAnswers[3])
-        default:
-            break
-        }
+        answersChosen.append(currentAnswers[sender.tag])
         
+
         nextQuestion()
     }
     
